@@ -1,64 +1,85 @@
-// JavaScript para el menú móvil
-const mobileToggle = document.getElementById('mobile-toggle');
-const navMenu = document.getElementById('nav-menu');
-
-mobileToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
     
-    // Cambiar icono
-    const icon = mobileToggle.querySelector('i');
-    if (navMenu.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+    mobileMenuBtn.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Calculate offset considering fixed header
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Simple form validation for newsletter
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+            
+            if (!isValidEmail(email)) {
+                alert('Por favor, introduce una dirección de email válida.');
+                return;
+            }
+            
+            // Here you would typically send the data to your server
+            alert('¡Gracias por suscribirte! Pronto recibirás nuestras recomendaciones.');
+            emailInput.value = '';
+        });
     }
-});
-
-// Cerrar menú al hacer clic en un enlace
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        mobileToggle.querySelector('i').classList.remove('fa-times');
-        mobileToggle.querySelector('i').classList.add('fa-bars');
-    });
-});
-
-// Animación de scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Efecto de revelado al hacer scroll
-const revealElements = document.querySelectorAll('.feature-card, .service-card');
-
-function checkReveal() {
-    const windowHeight = window.innerHeight;
-    const revealPoint = 150;
     
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    // Animation on scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.product-card, .value-item, .blog-card');
         
-        if (elementTop < windowHeight - revealPoint) {
-            element.classList.add('active');
-        }
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = 1;
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    // Set initial state for animated elements
+    const animatedElements = document.querySelectorAll('.product-card, .value-item, .blog-card');
+    animatedElements.forEach(element => {
+        element.style.opacity = 0;
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
-}
-
-// Ejecutar al cargar y al hacer scroll
-window.addEventListener('load', checkReveal);
-window.addEventListener('scroll', checkReveal);
+    
+    // Run on load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+});
