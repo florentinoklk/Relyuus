@@ -1,17 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Relyuus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relyuus - Soluciones Digitales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>¡Hola Mundo!</h1>
-    <p>Este sitio web es propiedad de Josue Florentino. Todavia esta en proceso de creacion.</p>
-    <p>Siguenos en Instagram para mantenerte informado</p>
-    <!-- Aquí irán tus enlaces de afiliado en el futuro -->
-    <a href="https://www.instagram.com/relyuus">Instagram</a>
-    <img src="assets/img/logo.png" alt=" max-width: 100%;
-    height: auto;Logo">
- <script src="assets/js/script.js"></script>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Rely<span>uus</span></a>
+            
+            <button class="mobile-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link">Inicio</a></li>
+                <li><a href="#features" class="nav-link">Características</a></li>
+                <li><a href="#services" class="nav-link">Servicios</a></li>
+                <li><a href="#about" class="nav-link">Nosotros</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Soluciones digitales para tu negocio</h1>
+            <p>Impulsamos tu presencia en línea con herramientas innovadoras y estrategias efectivas que generan resultados reales.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn">Nuestros servicios</a>
+                <a href="#contact" class="btn btn-secondary">Contactar ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por qué elegirnos</h2>
+                <p>Ofrecemos soluciones innovadoras diseñadas para hacer crecer tu negocio en el mundo digital.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Rápido y Eficiente</h3>
+                    <p>Desarrollamos soluciones optimizadas para un rendimiento superior y tiempos de carga ultrarrápidos.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Seguro y Confiable</h3>
+                    <p>Implementamos los más altos estándares de seguridad para proteger tus datos y los de tus clientes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Totalmente Responsive</h3>
+                    <p>Nuestras soluciones se adaptan perfectamente a todos los dispositivos y tamaños de pantalla.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos una amplia gama de servicios digitales para satisfacer todas tus necesidades.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web modernos, responsive y optimizados para SEO que convierten visitantes en clientes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Marketing Digital</h3>
+                    <p>Estrategias efectivas de marketing online para aumentar tu visibilidad y generar leads calificados.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Branding Corporativo</h3>
+                    <p>Desarrollamos identidades de marca memorables que comunican tu valor y te diferencian de la competencia.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>E-commerce</h3>
+                    <p>Tiendas online completamente funcionales con pasarelas de pago seguras y gestión de inventario.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Consultoría Tecnológica</h3>
+                    <p>Asesoramiento experto para implementar las mejores soluciones tecnológicas en tu negocio.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Soporte Continuo</h3>
+                    <p>Mantenimiento, actualizaciones y soporte técnico para garantizar el máximo rendimiento de tus sistemas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
+            <p>Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales.</p>
+            <a href="#contact-form" class="btn">Comenzar ahora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Relyuus</h3>
+                    <p>Soluciones digitales innovadoras para impulsar tu negocio en el mundo online.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#features">Características</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Desarrollo Web</a></li>
+                        <li><a href="#">Marketing Digital</a></li>
+                        <li><a href="#">Branding Corporativo</a></li>
+                        <li><a href="#">E-commerce</a></li>
+                        <li><a href="#">Consultoría Tecnológica</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> info@relyuus.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Relyuus. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
